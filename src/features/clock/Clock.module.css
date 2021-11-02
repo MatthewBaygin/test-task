@@ -1,0 +1,126 @@
+:root {
+  --clock-diameter: 200px;
+  --sec-hand: calc(var(--clock-diameter) / 2 * 0.9);
+  --min-hand: calc(var(--clock-diameter) / 2 * 0.8);
+  --hour-hand: calc(var(--clock-diameter) / 2 * 0.4);
+  --hour-width: 6px;
+  --min-width: 4px;
+  --sec-width: 2px;
+}
+
+.clock {
+  width: var(--clock-diameter);
+  height: var(--clock-diameter);
+  border-radius: 50%;
+  box-shadow: 0 2px 30px rgba(0, 0, 0, 0.2);
+  font-size: 24px;
+  color: #444;
+  text-align: center;
+  position: relative;
+}
+
+.clock::after {
+  background: #aaa;
+  content: "";
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 2px solid #fff;
+}
+
+.hour_hand {
+  position: absolute;
+  width: var(--hour-width);
+  height: var(--hour-hand);
+  background: #222;
+  top: 30%;
+  left: calc(50% - (var(--hour-width) / 2));
+  transform-origin: bottom;
+  z-index: 2;
+}
+
+.min_hand {
+  position: absolute;
+  width: var(--min-width);
+  height: var(--min-hand);
+  background: #444;
+  top: 10%;
+  left: calc(50% - (var(--min-width) / 2));
+  transform-origin: bottom;
+  z-index: 2;
+}
+
+.sec_hand {
+  position: absolute;
+  width: var(--sec-width);
+  height: var(--sec-hand);
+  background: red;
+  top: 5%;
+  left: calc(50% - (var(--sec-width) / 2));
+  transform-origin: bottom;
+  z-index: 2;
+}
+.marking {
+  content: "";
+  position: absolute;
+  width: 4px;
+  height: 180px;
+  left: calc(50% - 2px);
+  top: calc(10px);
+  background: #aaa;
+}
+.marking_one {
+  -webkit-transform: rotate(30deg);
+  -moz-transform: rotate(30deg);
+  transform: rotate(30deg);
+}
+
+.marking_two {
+  -webkit-transform: rotate(60deg);
+  -moz-transform: rotate(60deg);
+  transform: rotate(60deg);
+}
+
+.marking_three {
+  -webkit-transform: rotate(120deg);
+  -moz-transform: rotate(120deg);
+  transform: rotate(120deg);
+}
+
+.marking_four {
+  -webkit-transform: rotate(150deg);
+  -moz-transform: rotate(150deg);
+  transform: rotate(150deg);
+}
+.marking_five {
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  transform: rotate(0deg);
+}
+.marking_six {
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+.inner_clock_face {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  width: 80%;
+  height: 80%;
+  background: #fff;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  border-radius: 100%;
+  z-index: 1;
+}
+.clock_wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
